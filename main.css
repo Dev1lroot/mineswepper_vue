@@ -1,0 +1,68 @@
+*{
+    user-select: none;
+}
+body{
+    background-color: #000;
+    font-family: monospace;
+    color: #999;
+}
+main{
+    margin: 0px auto;
+    width: fit-content;
+}
+.block--{
+    color: #444;
+}
+.block-1{
+    color: #00FF00;
+}
+.block-2{
+    color: #fffb00;
+}
+.block-3{
+    color: #ff4800;
+}
+.block-4{
+    color: #ff0000;
+}
+.block-4{
+    color: #ff00f2;
+}
+.block-5{
+    color: #8400ff;
+}
+.block-6{
+    color: #0011ff;
+}
+.field{
+    font-size: 26px;
+}
+.field > div{
+    display: flex;
+}
+.field > div > div, a{
+    cursor: pointer;
+    width: 32px;
+    text-align: center;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes Bomb {
+    0%{
+        color: #00000000;
+    }
+    50%{
+        color: #ff0000;
+    }
+    100%{
+        color: #00000000;
+    }
+}
+.bomb{
+    animation: Bomb 0.3s linear infinite;
+}
+.stats{
+    padding: 10px;
+}

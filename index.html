@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueSwepper</title>
+    <script src="vue.js"></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body>
+    <main>
+        <section class="stats">
+            <div>
+                Уровень {{level}}<br>
+                Бомб: {{bombs}}<br>
+                Открыто: {{unlockedMarks()}}/{{totalMarks()}} ({{lockedMarks()}})
+            </div>
+        </section>
+        <section class="field">
+            <div v-for="x in matrix.length">
+                <div v-for="y in matrix[x-1].length" @click="openBlock(x-1,y-1)" @contextmenu.prevent="markBlock(x-1,y-1)">
+                    <a v-if="overlay[x-1][y-1] == 1">#</a>
+                    <a v-if="overlay[x-1][y-1] == -1">X</a>
+                    <a v-if="overlay[x-1][y-1] == 0" :class="'block-'+matrix[x-1][y-1]+' '+((matrix[x-1][y-1] == '*')?'bomb':'')">{{matrix[x-1][y-1]}}</a>
+                </div>
+            </div>
+        </section>
+    </main>   
+</body>
+</html>
